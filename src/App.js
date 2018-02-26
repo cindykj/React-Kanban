@@ -1,13 +1,24 @@
 import React, { Component } from 'react';
+import axios from 'axios';
+import {connect} from 'react-redux';
+
 import logo from './logo.svg';
 import './index.css';
 import Header from '../src/components/Header';
 import Column from '../src/components/Column';
 import Card from '../src/components/Card';
+import {loadCards} from './actions/index';
+import reducers from './reducers';
+
+//open inspector and look at {}
+// axios.get('/api/kanban')
+// .then(result => {
+//   console.log(result.data)
+// })
 
 class App extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       id: '',
       title: '',
@@ -16,11 +27,13 @@ class App extends Component {
       createdBy: '',
       assignedTo: '',
     }
+    console.log(this.props)
   }
 
-  // componentWillMount() {
-  //   this.props.loadCards()
-  // }
+  componentWillMount() {
+    this.props.loadCards()
+
+  }
 
   render() {
     return (
@@ -29,20 +42,35 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Welcome to React</h1>
         </header>
-        <p className="App-intro">
+
         <Header name="KanBan"/> 
         <Column />
+        <Card />
+        
 
 
-
-
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     )
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    cards: state.cardReducer.cards // calls reducer inital state
+  }
+}
 
-// <BookList books={this.state.bookList} findBook={this.state.findBook} />
+const mapDispatchToProps = dispatch => {
+  return { 
+    loadCards: () => { //set to props above
+      dispatch(loadCards()) //calling from action
+    }
+  }
+}
+
+const ConnectedApp = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
+
+export default ConnectedApp;

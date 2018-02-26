@@ -4,12 +4,15 @@ const Card = ({ cards }) => {
   return(
     <div className="card-component">
     <div className="card-title">
-      { cards.title }
+      {/* { cards.title } */}
+      card title
     </div>
     <div className="card-details">
-      Priority: { cards.priority }
+      Priority: 
+      {/* { cards.priority } */}
       <br />
-      Assigned by: { cards.createdBy }
+      Assigned by: 
+      {/* { cards.createdBy } */}
     </div>
 
     <div className="card-bottom">
@@ -17,7 +20,8 @@ const Card = ({ cards }) => {
         Edit
       </button>
       <div className="assigned-to">
-        {cards.assignedTo}
+      Assigned to:
+        {/* {cards.assignedTo} */}
       </div>
     </div>
   </div>

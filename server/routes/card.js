@@ -11,22 +11,8 @@ router.route(`/`)
   .get((req, res) => {
     return Card
       .fetchAll()
-      .then(allCards => {
-        // console.log(allCards.models)
-        allCards.models.map((element) => {
-          let {
-            title,
-            priority,
-            created_by,
-            assigned_to
-          } = element.attributes
-          return {
-            title,
-            priority,
-            created_by,
-            assigned_to
-          };
-        })
+      .then(result=> {
+        return res.json(result)
       })
       .then(result => {
         return res.render('/') //change this!
@@ -37,7 +23,6 @@ router.route(`/`)
           code: err.code
         })
       })
-
   })
 
   .post((req, res) => {

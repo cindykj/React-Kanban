@@ -4,7 +4,7 @@ const Column = () => {
   return(
   <div className="column-name">
     <div className="column-title">
-    {/* do some work in here, like .filter; .map? */}
+    {/* do some work in here, like .filter; .map */}
     </div>
   </div>
   )
