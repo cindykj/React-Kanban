@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { addCard } from '../../actions/index';
+import { addCard, editCard, deleteCard } from '../../actions/index';
 
 
 // SMOKE TEST FOR AXIOS: open inspector and look at {}
@@ -135,8 +135,3 @@ const ConnectedNewCard = connect(
 )(NewCard)
 
 export default ConnectedNewCard;
-
-//  addCard: card => dispatch(addCard(card))
-
-// loadPlanets: () => {
-//   dispatch(loadPlanets());

@@ -1,6 +1,7 @@
 import React from 'react';
 
-const Card = ( {title, priority, created_by, assigned_to} ) => {
+
+const Card = ( {title, priority, created_by, assigned_to, handleEdit, handleDelete } ) => {
   // console.log('component card', cards)
   return(
     <div className="card-component">
@@ -14,10 +15,10 @@ const Card = ( {title, priority, created_by, assigned_to} ) => {
     </div>
 
     <div className="card-bottom">
-      <button className="edit-button">
+      <button className="edit-button" onChange={ handleEdit }>
         Edit
       </button>
-      <button className="delete-button">
+      <button className="delete-button" onChange={ handleDelete} >
         Delete
       </button>
       <div className="assigned-to">

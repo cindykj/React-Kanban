@@ -63,13 +63,13 @@ class App extends Component {
 //<Card cards={this.props.cards[0]}/>
  
 
-const mapStateToProps = state => {
+const mapStateToProps = state => { //goes to the reducer
   return {
     cards: state.cardReducer.cards // calls reducer inital state
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = dispatch => { //second argument is getState
   return { 
     loadCards: () => { //set to props above
       dispatch(loadCards()) //calling from action
