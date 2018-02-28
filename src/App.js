@@ -2,17 +2,22 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import {connect} from 'react-redux';
 
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './index.css';
 import Header from '../src/components/Header';
 import Column from '../src/components/Column';
-import Card from '../src/components/Card';
+import NewCard from '../src/containers/NewCardForm';
+// import Card from '../src/components/Card';
+// import Board from '../src/containers/Board/index';
 import {loadCards} from './actions/index';
 import reducers from './reducers';
 
-//open inspector and look at {}
+
+
+
+//SMOKE TEST FOR AXIOS: open inspector and look at {}
 // axios.get('/api/kanban')
-// .then(result => {
+
 //   console.log(result.data)
 // })
 
@@ -27,7 +32,7 @@ class App extends Component {
       createdBy: '',
       assignedTo: '',
     }
-    console.log(this.props)
+    // console.log('this.props', this.props)
   }
 
   componentWillMount() {
@@ -36,23 +41,27 @@ class App extends Component {
   }
 
   render() {
+    // console.log('thispropscards', this.props.cards)
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-
+      <div className="main">
         <Header name="KanBan"/> 
-        <Column />
-        <Card />
+        {/* <Board /> */}
+        <NewCard />
+      <div className="column-container">
         
+        <Column cards={this.props.cards} columnName="queue"/>
+        <Column cards={this.props.cards} columnName="in_progress"/>
+        <Column cards={this.props.cards} columnName="done"/>
 
+
+      </div>
 
       </div>
     )
   }
 }
+//<Card cards={this.props.cards[0]}/>
+ 
 
 const mapStateToProps = state => {
   return {

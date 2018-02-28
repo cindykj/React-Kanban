@@ -1,2 +1,81 @@
 body {
-  background: powderblue; }
+  background: paleturquoise;
+  font-family: 'Montserrat', sans-serif;
+  color: #3e4144; }
+
+h1 {
+  font-size: 20px; }
+
+.header-bar {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+  background-color: lightcoral;
+  width: 97%;
+  border-bottom: 1px solid #E5E5E5; }
+
+.card-component {
+  background-color: lightgoldenrodyellow;
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 2px 2px 5px #755959; }
+
+.card-title {
+  text-align: start; }
+
+.card-details {
+  font-size: 12px;
+  text-align: start;
+  padding: 10px; }
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: 100%; }
+
+button {
+  font-family: 'Montserrat', sans-serif;
+  background-color: lightsalmon;
+  border: 1px solid #24315e;
+  color: #3e4144;
+  padding: 5px;
+  letter-spacing: 1px; }
+
+button:hover {
+  background-color: lightseagreen;
+  color: bisque;
+  transition: 0.3s ease; }
+
+.column-container {
+  display: flex;
+  justify-content: space-between;
+  width: 97%;
+  min-height: 600px; }
+
+.column-wrapper {
+  flex: 1;
+  text-align: center;
+  padding: 10px; }
+
+input {
+  font-family: 'Montserrat', sans-serif;
+  background-color: bisque;
+  color: #3e4144;
+  padding: 5px;
+  letter-spacing: 1px;
+  outline: none; }
+
+input[type=text]:focus {
+  background-color: lightblue; }
+
+select {
+  font-family: 'Montserrat', sans-serif;
+  background-color: bisque;
+  color: #3e4144;
+  padding: 5px;
+  letter-spacing: 1px; }

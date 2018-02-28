@@ -1,27 +1,27 @@
 import React from 'react';
 
-const Card = ({ cards }) => {
+const Card = ( {title, priority, created_by, assigned_to} ) => {
+  // console.log('component card', cards)
   return(
     <div className="card-component">
     <div className="card-title">
-      {/* { cards.title } */}
-      card title
+      { title }
     </div>
     <div className="card-details">
-      Priority: 
-      {/* { cards.priority } */}
+      Priority: { priority }
       <br />
-      Assigned by: 
-      {/* { cards.createdBy } */}
+      Assigned by: { created_by }
     </div>
 
     <div className="card-bottom">
       <button className="edit-button">
         Edit
       </button>
+      <button className="delete-button">
+        Delete
+      </button>
       <div className="assigned-to">
-      Assigned to:
-        {/* {cards.assignedTo} */}
+        { assigned_to }
       </div>
     </div>
   </div>
@@ -30,3 +30,5 @@ const Card = ({ cards }) => {
 
 
 export default Card;
+
+// const Card = ( {cards={}} ) => {
